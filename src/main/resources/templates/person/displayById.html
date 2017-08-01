@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Znaleziono:</h1>
+<div th:replace="fragments/all :: all"></div>
+
+<a href="all.html">Powrót do listy</a><br>
+<a th:href="@{all}">Back</a>
+</body>
+</html>
