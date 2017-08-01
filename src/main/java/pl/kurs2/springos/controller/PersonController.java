@@ -8,11 +8,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.kurs2.springos.model.Person;
 
-import java.util.List;
 
 
 @Controller
 public class PersonController {
+
+    @GetMapping("/")
+    public String hello(ModelMap modelMap){
+        modelMap.addAttribute("people", personDao.findAllCorrect());
+        return "person/all";
+    }
 
     //Jest to luźnie powiązanie
     private PersonDao personDao = new PersonDao();
